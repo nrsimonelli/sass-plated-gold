@@ -157,6 +157,7 @@ body {
       min-width: $value;
     }
   }
+
   .max-h {
     @include options($height, $props...) using ($value) {
       max-height: $value;
