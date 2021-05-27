@@ -112,15 +112,54 @@ $colors: (
 );
 
 $theme: (
-  'grey': (
+  primary: (
     base: #404145,
     light: #c7c7cd,
   ),
-  'yellow': (
+  secondary: (
     base: #ecaf2d,
     light: #eee444,
   ),
-  'green': (
+  accent: (
+    base: #5ad864,
+    light: #469ff2,
+  ),
+  night-primary: (
+    base: #404145,
+    light: #c7c7cd,
+  ),
+  night-secondary: (
+    base: #ecaf2d,
+    light: #eee444,
+  ),
+  night-accent: (
+    base: #5ad864,
+    light: #469ff2,
+  ),
+);
+
+$dark-theme: (
+  primary: (
+    base: #404145,
+    light: #c7c7cd,
+  ),
+  secondary: (
+    base: #ecaf2d,
+    light: #eee444,
+  ),
+  accent: (
+    base: #5ad864,
+    light: #469ff2,
+  ),
+  day-primary: (
+    base: #404145,
+    light: #c7c7cd,
+  ),
+  day-secondary: (
+    base: #ecaf2d,
+    light: #eee444,
+  ),
+  day-accent: (
     base: #5ad864,
     light: #469ff2,
   ),
