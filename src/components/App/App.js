@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className='min-h-screen w-full'>
       <Nav />
-      <div className='light:bg-blue-500 light:text-blue-100 dark:bg-blue-900 dark:text-green-500'>
+      <div className='bg-blue-500 text-blue-100 dark:bg-blue-900 dark:text-green-500'>
         Hello World
       </div>
       <Hero />
