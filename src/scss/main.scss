@@ -24,10 +24,6 @@ body {
   padding: 0;
 }
 
-.testing {
-  max-width: map-get($map: $breakpoints, $key: 'sm' );
-}
-
 @each $name, $value in $breakpoints {
 
   @media screen and (min-width: $value) {
@@ -77,6 +73,18 @@ body {
     @include options($items, $props...) using ($value) {
       align-items: $value;
     }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .initial {
+    display: initial;
+  }
+
+  .inherit {
+    display: inherit;
   }
 
   .flex {
