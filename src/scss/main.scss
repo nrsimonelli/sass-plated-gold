@@ -14,26 +14,99 @@
 :root {
   font-family: 'Poppins', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
 
-@include variants('dark' 'light' 'hover' 'group-hover') using
-  ($props...) {
+.testing {
+  max-width: map-get($map: $breakpoints, $key: 'sm' );
+}
+
+@each $name, $value in $breakpoints {
+
+  @media screen and (min-width: $value) {
+    .container {
+      min-width: $value;
+    }
+    .container-#{$name} {
+      min-width: $value;
+    }
+  }
+
+}
+
+@include variants('responsive' 'hover') using ($props...) {
+  :root.dark {
+    .dark\:bg {
+      @include options($colors, $props...) using ($value) {
+        background: $value;
+      }
+    }
+    .dark\:text {
+      @include options($colors, $props...) using ($value) {
+        color: $value;
+      }
+    }
+  }
+
   .bg {
     @include options($colors, $props...) using ($value) {
       background: $value;
     }
   }
+
   .text {
     @include options($colors, $props...) using ($value) {
       color: $value;
     }
   }
-}
 
-@include variants('responsive') using ($props...) {
+  .justify {
+    @include options($justify, $props...) using ($value) {
+      justify-content: $value;
+    }
+  }
+
+  .items {
+    @include options($items, $props...) using ($value) {
+      align-items: $value;
+    }
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex-wrap-rev {
+    flex-wrap: wrap-reverse;
+  }
+
+  .flex {
+    @include options($flex, $props...) using ($value) {
+      flex: $value;
+    }
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+  }
+
   .p {
     @include options($spacing, $props...) using ($value) {
       padding: $value;
