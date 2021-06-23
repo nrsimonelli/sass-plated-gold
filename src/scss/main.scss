@@ -24,8 +24,27 @@ body {
   padding: 0;
 }
 
-@each $name, $value in $breakpoints {
+.transition {
+  @include options($transition) using ($value) {
+    transition-property: $value;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+}
 
+.duration {
+  @include options($duration) using ($value) {
+    transition-duration: $value;
+  }
+}
+
+.ease {
+  @include options($ease) using ($value) {
+    transition-timing-function: $value;
+  }
+}
+
+@each $name, $value in $breakpoints {
   @media screen and (min-width: $value) {
     .container {
       min-width: $value;
@@ -34,7 +53,6 @@ body {
       min-width: $value;
     }
   }
-
 }
 
 @include variants('responsive' 'hover') using ($props...) {
